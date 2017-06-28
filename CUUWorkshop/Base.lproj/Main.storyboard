@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,8 +21,54 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iTo-yw-ffT">
+                                <rect key="frame" x="67" y="70" width="240" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="9Db-S6-gkR"/>
+                                    <constraint firstAttribute="width" constant="240" id="wTb-AS-e9m"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdI-Ec-Be0">
+                                <rect key="frame" x="16" y="254" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuW-BD-gy8">
+                                <rect key="frame" x="16" y="283" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXg-yb-Xw6">
+                                <rect key="frame" x="16" y="312" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mXg-yb-Xw6" secondAttribute="trailing" id="0Nm-BI-zyV"/>
+                            <constraint firstItem="mXg-yb-Xw6" firstAttribute="top" secondItem="yuW-BD-gy8" secondAttribute="bottom" constant="8" id="7gs-uq-8oC"/>
+                            <constraint firstItem="iTo-yw-ffT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="GAa-wq-627"/>
+                            <constraint firstItem="iTo-yw-ffT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ITK-9h-dIi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yuW-BD-gy8" secondAttribute="trailing" id="MXX-eb-VYy"/>
+                            <constraint firstItem="mXg-yb-Xw6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PVd-Lz-ZBc"/>
+                            <constraint firstItem="yuW-BD-gy8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PoL-9f-e6M"/>
+                            <constraint firstItem="zdI-Ec-Be0" firstAttribute="top" secondItem="iTo-yw-ffT" secondAttribute="bottom" constant="24" id="W6a-JK-8MW"/>
+                            <constraint firstItem="zdI-Ec-Be0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wwl-Ui-tz1"/>
+                            <constraint firstItem="yuW-BD-gy8" firstAttribute="top" secondItem="zdI-Ec-Be0" secondAttribute="bottom" constant="8" id="d1J-bG-BzL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zdI-Ec-Be0" secondAttribute="trailing" id="dYr-k1-PG8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="yuW-BD-gy8" id="rAR-1I-1Wy"/>
+                        <outlet property="imageView" destination="iTo-yw-ffT" id="enq-PM-Qgj"/>
+                        <outlet property="summaryLabel" destination="mXg-yb-Xw6" id="019-Fj-aeg"/>
+                        <outlet property="titleLabel" destination="zdI-Ec-Be0" id="I5s-1W-Yaj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

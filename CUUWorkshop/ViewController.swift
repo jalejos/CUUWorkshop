@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
     var reviewArray: [Review] = []
     
     override func viewDidLoad() {
@@ -22,7 +26,15 @@ class ViewController: UIViewController {
     }
 
     func stepTwo() {
-        print(self.reviewArray[0].title)
+        DispatchQueue.main.async {
+            let review = self.reviewArray[0]
+            self.imageView.image = review.image
+            self.titleLabel.text = review.title
+            self.authorLabel.text = review.author
+            self.summaryLabel.text = review.summary
+        }
+        
     }
+
 }
 
