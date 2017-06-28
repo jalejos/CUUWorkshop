@@ -33,6 +33,21 @@ class Review {
 }
 ```
 
+### Step 2.5
+Add this after the lines added in the exercise:
+```
+        guard let media = dictionary["multimedia"] as? [String: Any] else {
+            return
+        }
+        guard let urlString = media["src"] as? String else {
+            return
+        }
+        let image = try? UIImage(data: Data(contentsOf: URL(string: urlString)!))
+        if let image = image {
+            self.image = image
+        }
+```
+
 ### Step 3
 Add anywhere on the playground:
 ```
